@@ -10,6 +10,7 @@ type Cmd struct {
 	helpFlag    bool
 	versionFlag bool
 	cpOption    string
+	XjreOption  string
 	class       string   // Java主类名
 	args        []string // 传递给主类的参数
 }
@@ -23,6 +24,7 @@ func parseCmd() *Cmd {
 	flag.BoolVar(&cmd.versionFlag, "version", false, "print version and exit")
 	flag.StringVar(&cmd.cpOption, "classpath", "", "classpath")
 	flag.StringVar(&cmd.cpOption, "cp", "", "classpath")
+	flag.StringVar(&cmd.XjreOption, "Xjre", "", "path to jre")
 	flag.Parse()
 
 	args := flag.Args()
